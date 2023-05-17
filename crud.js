@@ -85,29 +85,41 @@ function cleardata(){
     category.value='';
  }
 // read 
-function showData(){
-    getTotal()
-    let table ='';
-    for( let i=0; i < datapro.length;i++){
-        table +=`
-                <tr>
-                <td>${i+1}</td>
-                <td>${datapro[i].title}</td>
-                <td>${datapro[i].price} MAD</td>
-                <td>${datapro[i].taxes} MAD </td>
-                <td>${datapro[i].ads} MAD</td>
-                <td>${datapro[i].discount} </td>
-                <td>${datapro[i].total}MAD</td>
-                <td>${datapro[i].category} </td>
-                <td><button id="Update" onclick="updateData(${i})">Update</button></td>
-                <td><button onclick="delateData(${i})" id="Delate">Delate</button></td>
-                </tr>
-        `
-        console.log(table)
-    }
+// ...
 
+let datapro = []; // Initialize as an empty array
+
+// ...
+
+function showData() {
+  getTotal();
+  let table = '';
+  for (let i = 0; i < datapro.length; i++) {
+    table += `
+      <tr>
+        <td>${i + 1}</td>
+        <td>${datapro[i].title}</td>
+        <td>${datapro[i].price} MAD</td>
+        <td>${datapro[i].taxes} MAD</td>
+        <td>${datapro[i].ads} MAD</td>
+        <td>${datapro[i].discount}</td>
+        <td>${datapro[i].total} MAD</td>
+        <td>${datapro[i].category}</td>
+        <td><button id="updateBtn" onclick="updateData(${i})">Update</button></td>
+        <td><button onclick="deleteData(${i})" id="deleteBtn">Delete</button></td>
+      </tr>
+    `;
+  }
+  document.getElementById('tbody').innerHTML = table;
+  let btnDeleteAll = document.getElementById('deleteAll');
+  if (datapro.length > 0) {
+    btnDeleteAll.innerHTML = '<td><button>Delete All</button></td>';
+  }
 }
-showData()
+
+showData();
+
+
 
 
 // delate
