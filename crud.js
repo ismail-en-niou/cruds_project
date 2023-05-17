@@ -9,7 +9,7 @@ let category =document.getElementById('category');
 let submit =document.getElementById('submit');
 let nbr;
 
-
+let datapro = [];
 let mode = 'create';
 // get total
 function getTotal(){
@@ -25,7 +25,7 @@ function getTotal(){
     }
 }
 // great prodoct
-let datapro ;
+
 if(localStorage.product!= null){
     datapro= JSON.parse(localStorage.product)
 }
