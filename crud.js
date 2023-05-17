@@ -8,7 +8,7 @@ let count=document.getElementById('count');
 let category =document.getElementById('category');   
 let submit =document.getElementById('submit');
 let nbr;
-
+let datapro = [];
 
 let mode = 'create';
 // get total
