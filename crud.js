@@ -105,13 +105,7 @@ function showData(){
         `
         console.log(table)
     }
-    document.getElementById('tbody').innerHTML = table;
-    let btnDelate = document.getElementById('delateAll')
-    if(datapro.length > 0){
-           btnDelate.innerHTML =`
-           <td><button>Delate All</button></td>
-           `
-    }
+
 }
 showData()
 
